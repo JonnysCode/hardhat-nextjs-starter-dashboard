@@ -13,6 +13,8 @@ import {
 } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
 
+import { ThemeSelector } from '@/components/ThemeSelector'
+
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -36,7 +38,7 @@ function classNames(...classes) {
 function ProfileMenu({ userNavigation }) {
     return (
         <div>
-            <Menu as="div" className="ml-3 relative">
+            <Menu as="div" className="relative">
                 <div>
                 <Menu.Button className="max-w-xs bg-white dark:bg-gray-900 flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     <span className="sr-only">Open user menu</span>
@@ -229,17 +231,18 @@ function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
 
 function Header({ setSidebarOpen, userNavigation }) {
   return (
-    <div className="sticky top-0 mt-3 z-10 mx-3 flex-shrink-0 flex h-16 rounded-t-2xl bg-white dark:bg-gray-900">
+    <div className="sticky top-0 z-10 flex-shrink-0 flex h-16">
 
       <SidebarMenu setSidebarOpen={setSidebarOpen}/>
 
       <div className="flex-1 px-4 flex justify-between">
         <div className="flex-1 flex items-center mx-4">
-          <h1 className="text-2xl font-semibold text-white">Dashboard</h1>
+          <h1 className="text-2xl font-semibold dark:text-white text-black">Dashboard</h1>
         </div>
 
-        <div className="ml-4 flex items-center md:ml-6">
-          <Notifications />
+        <div className="ml-4 flex items-center md:ml-6 relative basis-0 justify-end gap-4 sm:gap-6 md:flex-grow">
+          <ThemeSelector className="relative z-10" />
+          
           <ProfileMenu userNavigation={userNavigation} />
         </div>
       </div>
@@ -260,18 +263,18 @@ export function Layout({children}) {
           navigation={navigation}
         />
 
-        <div className="md:pl-60 flex flex-col min-h-screen">
-
-          <div className="hidden sm:block ">
-            <Header setSidebarOpen={setSidebarOpen} userNavigation={userNavigation} />
-          </div>
-
-          <main className="flex flex-grow">
-            <div className="py-6 mx-3 mb-3 w-full rounded-b-2xl dark:bg-gray-900">
-              {children}
+        <div className="md:pl-60 flex flex-col min-h-screen bg-white dark:bg-gray-800">
+          <div className="m-3 flex flex-grow sm:block rounded-2xl bg-gray-100 dark:bg-gray-900">
+            <div className="hidden sm:block">
+              <Header setSidebarOpen={setSidebarOpen} userNavigation={userNavigation} />
             </div>
-          </main>
 
+            <main className="flex flex-grow">
+              <div className="py-6 mx-3 mb-3 w-full">
+                {children}
+              </div>
+            </main>
+          </div>
         </div>
       </div>
     </>
