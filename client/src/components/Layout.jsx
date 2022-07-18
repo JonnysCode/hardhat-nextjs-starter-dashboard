@@ -253,25 +253,22 @@ export function Layout({children}) {
 
   return (
     <>
-      <div>
+      <div className="">
         <Sidebar 
           sidebarOpen={sidebarOpen} 
           setSidebarOpen={setSidebarOpen} 
           navigation={navigation}
         />
 
-        
-        <div className="md:pl-60 flex flex-col flex-1">
+        <div className="md:pl-60 flex flex-col min-h-screen">
 
-          <Header setSidebarOpen={setSidebarOpen} userNavigation={userNavigation} />
+          <div className="hidden sm:block ">
+            <Header setSidebarOpen={setSidebarOpen} userNavigation={userNavigation} />
+          </div>
 
-          <main className="flex-1">
-            <div className="py-6 mx-3 mb-3 rounded-b-2xl dark:bg-gray-900">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                <div className="">
-                  {children}
-                </div>
-              </div>
+          <main className="flex flex-grow">
+            <div className="py-6 mx-3 mb-3 w-full rounded-b-2xl dark:bg-gray-900">
+              {children}
             </div>
           </main>
 
