@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useRef, useContext } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {
   BellIcon,
@@ -12,6 +12,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 
+import SidebarContext from '@/context/SidebarContext';
 import { Navigation } from './Navigation';
 import { Logo } from './Logo';
 
@@ -22,6 +23,13 @@ function classNames(...classes) {
 
 
 export function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
+  const sidebarRef = useRef(null)
+  const { saveScroll } = useContext(SidebarContext)
+
+  const linkClickedHandler = () => {
+    saveScroll(sidebarRef.current)
+  }
+
   return (
     <div>
       {/* Mobile Sidebar*/}
@@ -89,7 +97,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex flex-col flex-grow overflow-y-auto bg-white dark:bg-gray-800">
           <Logo isMobile={false} />
-          <Navigation navigation={navigation} isMobile={false} />
+          <Navigation navigation={navigation} isMobile={false} linkClicked={linkClickedHandler} />
         </div>
       </div>
     </div>
