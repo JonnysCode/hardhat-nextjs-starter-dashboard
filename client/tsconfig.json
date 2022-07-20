@@ -21,6 +21,6 @@
       ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/icons/ThemingIcon.jsx", "components/Icon.jsx", "src/components/Dashboard.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.jsx",],
   "exclude": ["node_modules"]
 }

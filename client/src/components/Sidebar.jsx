@@ -1,14 +1,6 @@
-import { Fragment, useState, useRef, useContext } from 'react'
-import { Dialog, Menu, Transition } from '@headlessui/react'
+import { Fragment, useRef, useContext } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
 import {
-  BellIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
-  HomeIcon,
-  InboxIcon,
-  MenuAlt2Icon,
-  UsersIcon,
   XIcon,
 } from '@heroicons/react/outline'
 
@@ -17,14 +9,9 @@ import { Navigation } from './Navigation';
 import { Logo } from './Logo';
 
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-
-export function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
+export function Sidebar() {
   const sidebarRef = useRef(null)
-  const { saveScroll } = useContext(SidebarContext)
+  const { isSidebarOpen, closeSidebar, saveScroll } = useContext(SidebarContext)
 
   const linkClickedHandler = () => {
     saveScroll(sidebarRef.current)
@@ -33,8 +20,8 @@ export function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
   return (
     <div>
       {/* Mobile Sidebar*/}
-      <Transition.Root show={sidebarOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-40 md:hidden" onClose={setSidebarOpen}>
+      <Transition.Root show={isSidebarOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-40 md:hidden" onClose={closeSidebar}>
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -71,7 +58,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
                     <button
                       type="button"
                       className="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                      onClick={() => setSidebarOpen(false)}
+                      onClick={closeSidebar}
                     >
                       <span className="sr-only">Close sidebar</span>
                       <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
@@ -81,7 +68,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
 
                 <Logo isMobile={true} />
 
-                <Navigation navigation={navigation} isMobile={true} />
+                <Navigation isMobile={true} linkClicked={linkClickedHandler}/>
                 
               </Dialog.Panel>
             </Transition.Child>
@@ -97,7 +84,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen, navigation }) {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex flex-col flex-grow overflow-y-auto bg-white dark:bg-gray-800">
           <Logo isMobile={false} />
-          <Navigation navigation={navigation} isMobile={false} linkClicked={linkClickedHandler} />
+          <Navigation isMobile={false} linkClicked={linkClickedHandler} />
         </div>
       </div>
     </div>

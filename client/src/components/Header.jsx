@@ -20,11 +20,12 @@ function Notifications(props) {
 }
 
 
-export function Header({ setSidebarOpen, userNavigation }) {
+export function Header({ userNavigation }) {
+
   return (
     <div className="sticky top-0 z-10 flex-shrink-0 flex h-16">
 
-      <SidebarMenu setSidebarOpen={setSidebarOpen}/>
+      <SidebarMenu />
 
       <div className="flex-1 px-4 flex justify-between">
         <div className="flex-1 flex items-center mx-4">
