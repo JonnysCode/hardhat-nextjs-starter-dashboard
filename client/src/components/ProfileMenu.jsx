@@ -1,13 +1,16 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 
+import HeaderContext from '@/context/HeaderContext'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 
-export function ProfileMenu({ userNavigation }) {
+export function ProfileMenu() {
+    const { userNavigation } = useContext(HeaderContext)
+
     return (
         <div>
             <Menu as="div" className="relative">

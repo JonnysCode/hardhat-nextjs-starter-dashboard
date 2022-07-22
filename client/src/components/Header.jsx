@@ -20,7 +20,7 @@ function Notifications(props) {
 }
 
 
-export function Header({ userNavigation }) {
+export function Header() {
 
   return (
     <div className="sticky top-0 z-10 flex-shrink-0 flex h-16">
@@ -29,13 +29,13 @@ export function Header({ userNavigation }) {
 
       <div className="flex-1 px-4 flex justify-between">
         <div className="flex-1 flex items-center mx-4">
-          <h1 className="text-2xl font-semibold dark:text-white text-black">Dashboard</h1>
+          <h1 className="text-2xl font-semibold dark:text-white text-black"></h1>
         </div>
 
         <div className="ml-4 flex items-center md:ml-6 relative justify-end gap-4 md:flex-grow">
           <ThemeSelector className="relative z-10" />
           
-          <ProfileMenu userNavigation={userNavigation} />
+          <ProfileMenu />
         </div>
       </div>
     </div>

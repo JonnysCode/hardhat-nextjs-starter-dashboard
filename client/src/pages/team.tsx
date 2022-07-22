@@ -1,3 +1,4 @@
+import { Header } from '@/components/Header'
 import { Layout } from '@/components/Layout'
 import type { NextPage } from 'next'
 import Head from 'next/head'
@@ -11,6 +12,8 @@ const Team: NextPage = () => {
           <title>Team Page</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
+
+        <Header></Header>
 
         
         <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
