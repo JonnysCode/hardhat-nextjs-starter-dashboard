@@ -44,10 +44,10 @@ export function BottomNavigation({ isMobile }) {
           </Link>
         ))}
 
-        <div className="flex flex-row justify-between divide-x divide-dotted pt-6 text-center">
+        <div className="flex flex-row justify-between divide-x divide-dotted divide-gray-400 pt-6 text-center dark:divide-gray-500">
           {bottomDisclaimer.map((item) => (
             <Link href={item.href} key={item.name}>
-              <a className="basis-1/3 text-xs text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+              <a className="basis-1/3 text-xs text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-300">
                 {item.name}
               </a>
             </Link>
@@ -60,7 +60,7 @@ export function BottomNavigation({ isMobile }) {
               <a className="space-x-4">
                 <item.icon
                   className={classNames(
-                    'text-gray-400 hover:text-gray-500 dark:hover:text-gray-300',
+                    'text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-300',
                     'm-2 h-4 w-4 flex-shrink-0'
                   )}
                   aria-hidden="true"

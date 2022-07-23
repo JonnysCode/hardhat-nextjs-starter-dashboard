@@ -41,7 +41,6 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   function toggleSidebar() {
-    console.log('toggleSidebar')
     setIsSidebarOpen(!isSidebarOpen)
   }
 

@@ -72,8 +72,8 @@ export function Sidebar() {
                 </Transition.Child>
 
                 <Logo isMobile={true} />
-
                 <Navigation isMobile={true} linkClicked={linkClickedHandler} />
+                <BottomNavigation isMobile={false} />
               </Dialog.Panel>
             </Transition.Child>
             <div className="w-14 flex-shrink-0" aria-hidden="true">
