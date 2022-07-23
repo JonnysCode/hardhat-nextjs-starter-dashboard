@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react'
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from 'react'
 
 // create context
 
@@ -16,19 +22,19 @@ interface ISidebarContext {
   setCurrentItem: (idx: number) => void
 }
 
-const SidebarContext = React.createContext<ISidebarContext>(
-  { 
-    isSidebarOpen: false,
-    currentIndex: 0,
-    scrollY: {id: null, position: 0},
-    closeSidebar: () => {},
-    toggleSidebar: () => {},
-    saveScroll: (el: HTMLElement | null) => {},
-    setCurrentItem: (idx: number) => {}
-  }
-);
+const SidebarContext = React.createContext<ISidebarContext>({
+  isSidebarOpen: false,
+  currentIndex: 0,
+  scrollY: { id: null, position: 0 },
+  closeSidebar: () => {},
+  toggleSidebar: () => {},
+  saveScroll: (el: HTMLElement | null) => {},
+  setCurrentItem: (idx: number) => {},
+})
 
-interface ISidebarPovider{ children: React.ReactNode }
+interface ISidebarPovider {
+  children: React.ReactNode
+}
 
 export const SidebarProvider = ({ children }: ISidebarPovider) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -43,21 +49,23 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
   }
 
   const defaultScrollY = useMemo(() => {
-    return {id: null, position: 0}
+    return { id: null, position: 0 }
   }, [])
 
   const storageScrollY = useCallback(() => {
-    return JSON.parse(localStorage.getItem('sidebarScrollY') || JSON.stringify(defaultScrollY))
+    return JSON.parse(
+      localStorage.getItem('sidebarScrollY') || JSON.stringify(defaultScrollY)
+    )
   }, [defaultScrollY])
 
   const [scrollY, setScrollY] = useState<IScrollY>(
-    (typeof window) ? storageScrollY() : defaultScrollY
+    typeof window ? storageScrollY() : defaultScrollY
   )
 
   function saveScroll(el: HTMLElement | null) {
     const id = el?.id || null
     const position = el?.scrollTop || 0
-    setScrollY({id, position})
+    setScrollY({ id, position })
   }
 
   function setCurrentItem(idx: number) {
@@ -88,10 +96,14 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
     toggleSidebar,
     closeSidebar,
     saveScroll,
-    setCurrentItem
+    setCurrentItem,
   }
 
-  return <SidebarContext.Provider value={context}>{children}</SidebarContext.Provider>
+  return (
+    <SidebarContext.Provider value={context}>
+      {children}
+    </SidebarContext.Provider>
+  )
 }
 
 export default SidebarContext

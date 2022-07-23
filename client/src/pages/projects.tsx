@@ -11,9 +11,7 @@ const Team: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header title={'Projects'} />
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center py-5 px-20 text-center">
+      <main className="flex flex-col items-center py-5 px-20 text-center">
         <h1 className="text-6xl font-bold">Projects</h1>
       </main>
     </Layout>
