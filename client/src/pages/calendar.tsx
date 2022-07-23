@@ -1,25 +1,21 @@
+import { Header } from '@/components/Header'
 import { Layout } from '@/components/Layout'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 
 const Team: NextPage = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center py-2">
-        <Head>
-          <title>Calendar Page</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      <Head>
+        <title>Calendar Page</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        
-        <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-          <h1 className="text-6xl font-bold">
-            Calendar
-          </h1>
-        </main>
+      <Header title={'Calendar'} />
 
-      </div>
+      <main className="flex w-full flex-1 flex-col items-center justify-center py-5 px-20 text-center">
+        <h1 className="text-6xl font-bold">Calendar</h1>
+      </main>
     </Layout>
   )
 }
