@@ -11,7 +11,7 @@ export function SidebarMenu() {
       <button
         type="button"
         className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:border-gray-800 dark:text-gray-200 md:hidden"
-        onClick={() => toggleSidebar}
+        onClick={toggleSidebar}
       >
         <span className="sr-only">Open sidebar</span>
         <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
