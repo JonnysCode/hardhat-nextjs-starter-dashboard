@@ -54,7 +54,9 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
 
   const storageScrollY = useCallback(() => {
     return JSON.parse(
-      localStorage.getItem('sidebarScrollY') || JSON.stringify(defaultScrollY)
+      /*localStorage.getItem('sidebarScrollY') ||*/ JSON.stringify(
+        defaultScrollY
+      )
     )
   }, [defaultScrollY])
 
