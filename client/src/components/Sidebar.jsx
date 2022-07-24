@@ -12,6 +12,7 @@ export function Sidebar() {
   const { isSidebarOpen, closeSidebar, saveScroll } = useContext(SidebarContext)
 
   const linkClickedHandler = () => {
+    console.log('Calling save scroll')
     saveScroll(sidebarRef.current)
   }
 

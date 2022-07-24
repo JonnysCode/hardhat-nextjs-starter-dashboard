@@ -14,22 +14,18 @@ interface IScrollY {
 }
 interface ISidebarContext {
   isSidebarOpen: boolean
-  currentIndex: number
   scrollY: IScrollY
   closeSidebar: () => void
   toggleSidebar: () => void
   saveScroll: (el: HTMLElement | null) => void
-  setCurrentItem: (idx: number) => void
 }
 
 const SidebarContext = React.createContext<ISidebarContext>({
   isSidebarOpen: false,
-  currentIndex: 0,
   scrollY: { id: null, position: 0 },
   closeSidebar: () => {},
   toggleSidebar: () => {},
   saveScroll: (el: HTMLElement | null) => {},
-  setCurrentItem: (idx: number) => {},
 })
 
 interface ISidebarPovider {
@@ -38,7 +34,6 @@ interface ISidebarPovider {
 
 export const SidebarProvider = ({ children }: ISidebarPovider) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
 
   function toggleSidebar() {
     setIsSidebarOpen(!isSidebarOpen)
@@ -53,6 +48,7 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
   }, [])
 
   const storageScrollY = useCallback(() => {
+    console.log('HAHAHAHA')
     return JSON.parse(
       localStorage.getItem('sidebarScrollY') || JSON.stringify(defaultScrollY)
     )
@@ -66,10 +62,6 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
     const id = el?.id || null
     const position = el?.scrollTop || 0
     setScrollY({ id, position })
-  }
-
-  function setCurrentItem(idx: number) {
-    setCurrentIndex(idx)
   }
 
   useEffect(() => {
@@ -91,12 +83,10 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
 
   const context = {
     isSidebarOpen,
-    currentIndex,
     scrollY,
     toggleSidebar,
     closeSidebar,
     saveScroll,
-    setCurrentItem,
   }
 
   return (

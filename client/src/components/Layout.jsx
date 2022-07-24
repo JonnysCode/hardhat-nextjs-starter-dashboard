@@ -1,9 +1,22 @@
+import { useContext, useEffect, useState } from 'react'
+
 import { Sidebar } from '@/components/Sidebar'
+import Pacman from '@/components/Loader/Pacman'
 import { Header } from './Header'
 import { SidebarProvider } from '@/context/SidebarContext'
 
 export function Layout({ children }) {
-  return (
+  const [showLoader, setShowLoaderState] = useState(true)
+
+  useEffect(() => {
+    return () => {
+      setShowLoaderState(false)
+    }
+  }, [])
+
+  return showLoader ? (
+    <Pacman />
+  ) : (
     <SidebarProvider>
       <div className="">
         <Sidebar />
