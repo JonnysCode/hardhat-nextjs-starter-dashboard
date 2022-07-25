@@ -46,26 +46,45 @@ function SystemIcon(props) {
 }
 
 export function ThemeSelector(props) {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const [selectedTheme, setSelectedTheme] = useState()
 
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
-
-  console.log('Theme: ', theme)
+  useEffect(() => {
+    if (!selectedTheme) {
+      setSelectedTheme(themes.find((t) => t.value === theme))
+    } else {
+      setTheme(selectedTheme.value)
+    }
+  }, [selectedTheme])
 
   return (
-    <Listbox as="div" value={theme} onChange={() => setTheme(theme)} {...props}>
+    <Listbox
+      as="div"
+      value={selectedTheme}
+      onChange={setSelectedTheme}
+      {...props}
+    >
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
       <Listbox.Button
         className="flex h-6 w-6 items-center justify-center rounded-lg shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-700 dark:ring-inset dark:ring-white/5"
-        aria-label={theme}
+        aria-label={selectedTheme?.name}
       >
-        <LightIcon className="hidden h-4 w-4 fill-sky-400 [[data-theme=light]_&]:block" />
-        <DarkIcon className="hidden h-4 w-4 fill-sky-400 [[data-theme=dark]_&]:block" />
-        <LightIcon className="hidden h-4 w-4 fill-slate-400 [:not(.dark)[data-theme=system]_&]:block" />
-        <DarkIcon className="hidden h-4 w-4 fill-slate-400 [.dark[data-theme=system]_&]:block" />
+        <LightIcon
+          className={clsx(
+            'block h-4 w-4 dark:hidden',
+            selectedTheme?.value === 'light'
+              ? 'fill-sky-400 dark:fill-sky-400'
+              : 'fill-slate-400'
+          )}
+        />
+        <DarkIcon
+          className={clsx(
+            'hidden h-4 w-4 dark:block',
+            selectedTheme?.value === 'dark'
+              ? 'fill-sky-400 dark:fill-sky-400'
+              : 'fill-slate-400'
+          )}
+        />
       </Listbox.Button>
       <Listbox.Options className="absolute top-full left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-white p-3 text-sm font-medium shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-slate-800 dark:ring-white/5">
         {themes.map((theme) => (
