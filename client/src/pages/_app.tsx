@@ -8,11 +8,12 @@ import {
   RainbowKitProvider,
   lightTheme,
   darkTheme,
+  midnightTheme,
 } from '@rainbow-me/rainbowkit'
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { publicProvider } from 'wagmi/providers/public'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider, useTheme } from 'next-themes'
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon],
@@ -33,6 +34,10 @@ const wagmiClient = createClient({
 function MyApp({ Component, pageProps }: AppProps) {
   // suppress useLayoutEffect warnings when running outside a browser
   if (!typeof window) React.useLayoutEffect = React.useEffect
+
+  const { theme } = useTheme()
+
+  console.log('theme', theme)
 
   return (
     <ThemeProvider defaultTheme="system" attribute="class">
