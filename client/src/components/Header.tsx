@@ -37,8 +37,6 @@ export function Header(props: HeaderProps) {
 
         <div className="relative ml-4 flex items-center justify-end gap-4 md:ml-6 md:flex-grow">
           <ThemeSelector className="relative z-10" />
-
-          <ProfileMenu />
           <ConnectButton />
         </div>
       </div>
