@@ -1,4 +1,5 @@
 import { BellIcon } from '@heroicons/react/outline'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 import { ThemeSelector } from '@/components/ThemeSelector'
 import { ProfileMenu } from '@/components/ProfileMenu'
@@ -36,8 +37,7 @@ export function Header(props: HeaderProps) {
 
         <div className="relative ml-4 flex items-center justify-end gap-4 md:ml-6 md:flex-grow">
           <ThemeSelector className="relative z-10" />
-
-          <ProfileMenu />
+          <ConnectButton />
         </div>
       </div>
     </div>

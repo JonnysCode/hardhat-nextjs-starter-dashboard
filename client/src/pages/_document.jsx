@@ -53,11 +53,11 @@ const themeScript = `
 
 export default function Document() {
   return (
-    <Html className="antialiased [font-feature-settings:'ss01'] h-full" lang="en">
+    <Html className="antialiased [font-feature-settings:'ss01']" lang="en">
       <Head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/*<script dangerouslySetInnerHTML={{ __html: themeScript }} />*/}
       </Head>
-      <body className="dark:bg-gray-800 h-full bg-gray-100">
+      <body className="bg-white dark:bg-gray-800">
         <Main />
         <NextScript />
       </body>
