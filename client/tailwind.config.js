@@ -1,7 +1,5 @@
-
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
-
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -35,10 +33,18 @@ module.exports = {
         '8xl': '88rem',
       },
       colors: {
-        primary: colors.green,
-        secondary: colors.amber,
+        primary: {
+          light: '#858ae8',
+          DEFAULT: '#676de3',
+          dark: '#5c62cc',
+        },
+        secondary: {
+          light: '#85e8b2',
+          DEFAULT: '#67e39f',
+          dark: '#5ccc8f',
+        },
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms'),],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 }

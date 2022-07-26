@@ -33,7 +33,7 @@ export function Sidebar() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-600 bg-opacity-75" />
+            <div className="fixed inset-0 bg-zinc-600 bg-opacity-75" />
           </Transition.Child>
 
           <div className="fixed inset-0 z-40 flex">
@@ -46,7 +46,7 @@ export function Sidebar() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative flex w-full max-w-xs flex-1 flex-col bg-white pt-5 pb-4 dark:bg-gray-800">
+              <Dialog.Panel className="relative flex w-full max-w-xs flex-1 flex-col bg-white pt-5 pb-4 dark:bg-zinc-800">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-in-out duration-300"
@@ -85,8 +85,9 @@ export function Sidebar() {
 
       {/* Desktop Sidebar*/}
       <div className="hidden md:fixed md:inset-y-0 md:flex md:w-60 md:flex-col">
-        <div className="flex flex-grow flex-col overflow-y-auto bg-white dark:bg-gray-800">
+        <div className="flex flex-grow flex-col overflow-y-auto bg-white dark:bg-zinc-800">
           <Logo isMobile={false} />
+          <div className="h-0" />
           <Navigation isMobile={false} linkClicked={linkClickedHandler} />
           <BottomNavigation isMobile={false} />
         </div>

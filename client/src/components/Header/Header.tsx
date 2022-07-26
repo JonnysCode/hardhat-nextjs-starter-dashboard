@@ -11,7 +11,7 @@ const Header = (props: HeaderProps) => {
   const { title = '' } = props
 
   return (
-    <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 rounded-t-2xl">
+    <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white dark:bg-zinc-800">
       <SidebarMenu />
 
       <div className="flex flex-1 justify-between px-4">
