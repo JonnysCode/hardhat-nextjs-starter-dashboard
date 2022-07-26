@@ -1,27 +1,13 @@
-import { BellIcon } from '@heroicons/react/outline'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
-import { ThemeSelector } from '@/components/ThemeSelector'
-import { ProfileMenu } from '@/components/ProfileMenu'
-import { SidebarMenu } from '@/components/SidebarMenu'
-
-function Notifications() {
-  return (
-    <button
-      type="button"
-      className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-gray-900"
-    >
-      <span className="sr-only">View notifications</span>
-      <BellIcon className="h-6 w-6" aria-hidden="true" />
-    </button>
-  )
-}
+import { ThemeSelector } from '@/components/Header/ThemeSelector'
+import { SidebarMenu } from '@/components/Header/SidebarMenu'
 
 interface HeaderProps {
   title?: string
 }
 
-export function Header(props: HeaderProps) {
+const Header = (props: HeaderProps) => {
   const { title = '' } = props
 
   return (
@@ -43,3 +29,5 @@ export function Header(props: HeaderProps) {
     </div>
   )
 }
+
+export default Header

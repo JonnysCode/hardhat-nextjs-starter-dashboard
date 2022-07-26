@@ -3,56 +3,19 @@ import '@/styles/globals.css'
 import React from 'react'
 import type { AppProps } from 'next/app'
 import '@rainbow-me/rainbowkit/styles.css'
-import {
-  getDefaultWallets,
-  RainbowKitProvider,
-  lightTheme,
-  darkTheme,
-  midnightTheme,
-} from '@rainbow-me/rainbowkit'
-import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
-import { alchemyProvider } from 'wagmi/providers/alchemy'
-import { publicProvider } from 'wagmi/providers/public'
-import { ThemeProvider, useTheme } from 'next-themes'
+import { ThemeProvider } from 'next-themes'
 
-const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon],
-  [alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }), publicProvider()]
-)
-
-const { connectors } = getDefaultWallets({
-  appName: 'My App',
-  chains,
-})
-
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-})
+import Web3Wrapper from '@/components/Layout/Web3Wrapper'
 
 function MyApp({ Component, pageProps }: AppProps) {
   // suppress useLayoutEffect warnings when running outside a browser
   if (!typeof window) React.useLayoutEffect = React.useEffect
 
-  const { theme } = useTheme()
-
-  console.log('theme', theme)
-
   return (
     <ThemeProvider defaultTheme="system" attribute="class">
-      <WagmiConfig client={wagmiClient}>
-        <RainbowKitProvider
-          coolMode
-          chains={chains}
-          theme={{
-            lightMode: lightTheme(),
-            darkMode: darkTheme(),
-          }}
-        >
-          <Component {...pageProps} />
-        </RainbowKitProvider>
-      </WagmiConfig>
+      <Web3Wrapper>
+        <Component {...pageProps} />
+      </Web3Wrapper>
     </ThemeProvider>
   )
 }
