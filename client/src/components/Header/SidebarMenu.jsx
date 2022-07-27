@@ -10,7 +10,7 @@ export function SidebarMenu() {
     <div className="mx-3 my-2 flex items-center">
       <button
         type="button"
-        className="h-full px-3 text-gray-500 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-200 hover:dark:text-gray-100 md:hidden"
+        className="h-11 rounded-xl px-2 text-black hover:text-primary-dark focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary dark:text-white hover:dark:text-primary-light md:hidden"
         onClick={toggleSidebar}
       >
         <span className="sr-only">Open sidebar</span>

@@ -84,8 +84,8 @@ export function Sidebar() {
       </Transition.Root>
 
       {/* Desktop Sidebar*/}
-      <div className="hidden md:fixed md:inset-y-0 md:flex md:w-60 md:flex-col">
-        <div className="flex flex-grow flex-col overflow-y-auto bg-white dark:bg-zinc-800">
+      <div className="hidden md:fixed md:inset-y-0 md:z-20 md:flex md:w-60 md:flex-col">
+        <div className="m-4 flex w-full flex-grow flex-col overflow-y-auto rounded-2xl bg-white/90 drop-shadow-xl  dark:bg-zinc-900">
           <Logo isMobile={false} />
           <div className="h-0" />
           <Navigation isMobile={false} linkClicked={linkClickedHandler} />

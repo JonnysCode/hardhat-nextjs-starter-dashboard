@@ -8,10 +8,10 @@ export function Layout({ children }) {
       <div className="">
         <Sidebar />
 
-        <div className="flex min-h-screen flex-col bg-white dark:bg-zinc-800 md:pl-60">
+        <div className="flex min-h-screen flex-col bg-gray-100 dark:bg-zinc-800 md:pl-64">
           <Header />
 
-          <div className="mx-3 mb-3 block flex-grow rounded-2xl bg-gray-100 dark:bg-zinc-900">
+          <div className="mx-4 mb-4 block flex-grow rounded-2xl">
             {children}
           </div>
         </div>
