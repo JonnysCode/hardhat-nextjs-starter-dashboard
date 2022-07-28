@@ -8,14 +8,13 @@ export function SidebarMenu() {
 
   return (
     <div className="mx-3 my-2 flex items-center">
-      <button
-        type="button"
-        className="h-11 rounded-xl px-2 text-black hover:text-primary-dark focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary dark:text-white hover:dark:text-primary-light md:hidden"
-        onClick={toggleSidebar}
+      <label
+        htmlFor="my-drawer-2"
+        className="btn btn-ghost btn-square drawer-button lg:hidden"
       >
         <span className="sr-only">Open sidebar</span>
-        <MenuAlt2Icon className="h-7 w-7" aria-hidden="true" />
-      </button>
+        <MenuAlt2Icon className="h-8 w-8" aria-hidden="true" />
+      </label>
     </div>
   )
 }

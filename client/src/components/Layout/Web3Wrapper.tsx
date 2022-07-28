@@ -70,7 +70,7 @@ const Web3Wrapper = ({ children }: any) => {
             : myDarkTheme
         }
       >
-        {children}
+        <div data-theme={resolvedTheme}>{children}</div>
       </RainbowKitProvider>
     </WagmiConfig>
   )

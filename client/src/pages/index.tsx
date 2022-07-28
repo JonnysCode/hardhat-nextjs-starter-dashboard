@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
         <p className="mt-3 text-2xl">
           Get started by editing{' '}
-          <code className="rounded-md bg-zinc-200/5 p-3 font-mono text-lg">
+          <code className="rounded-md bg-base-200 p-3 font-mono text-lg">
             pages/index.tsx
           </code>
         </p>

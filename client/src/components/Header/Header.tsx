@@ -11,7 +11,7 @@ const Header = (props: HeaderProps) => {
   const { title = '' } = props
 
   return (
-    <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-gray-100/30 px-2 backdrop-blur-md dark:bg-zinc-800/30 md:mx-4">
+    <div className="navbar sticky top-0 z-10 h-16 w-full bg-base-100 bg-opacity-30 backdrop-blur-md">
       <SidebarMenu />
 
       <div className="flex flex-1 justify-between">

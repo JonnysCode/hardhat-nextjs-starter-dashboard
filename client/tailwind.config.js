@@ -46,5 +46,38 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+
+  daisyui: {
+    themes: [
+      {
+        light: {
+          primary: '#8a4af3',
+          secondary: '#86efac',
+          accent: '#fcd34d',
+          neutral: '#e4e5f6',
+          'base-100': '#f8fafc',
+          'base-200': '#f1f2fc',
+          'base-300': '#fff',
+        },
+      },
+      {
+        dark: {
+          primary: '#8a4af3',
+          secondary: '#86efac',
+          accent: '#fcd34d',
+          neutral: '#e4e5f6',
+          'base-100': '#20252f',
+          'base-200': '#1c212a',
+          'base-300': '#0d131f',
+        },
+      },
+      'cupcake',
+    ],
+  },
+
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('daisyui'),
+  ],
 }
