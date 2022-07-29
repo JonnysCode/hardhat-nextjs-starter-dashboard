@@ -7,24 +7,17 @@ interface HeaderProps {
   title?: string
 }
 
-const Header = (props: HeaderProps) => {
-  const { title = '' } = props
-
+const Header = ({ title }: HeaderProps) => {
   return (
-    <div className="navbar sticky top-0 z-10 h-16 w-full bg-base-100 bg-opacity-30 backdrop-blur-md">
-      <SidebarMenu />
+    <div className="navbar sticky top-0 bg-base-100 bg-opacity-30 backdrop-blur-md">
+      <div className="">
+        <SidebarMenu />
+        <h1 className="mt-2 text-3xl font-bold">{title}</h1>
+      </div>
 
-      <div className="flex flex-1 justify-between">
-        <div className="mx-4 flex flex-1 items-center">
-          <h1 className="text-2xl font-semibold text-black dark:text-white">
-            {title}
-          </h1>
-        </div>
-
-        <div className="relative ml-4 flex items-center justify-end gap-4 md:ml-6 md:flex-grow">
-          <ThemeSelector className="relative z-10" />
-          <ConnectButton />
-        </div>
+      <div className="absolute right-0 flex items-center justify-end gap-4 px-3 md:flex-grow">
+        <ThemeSelector className="relative z-10" />
+        <ConnectButton />
       </div>
     </div>
   )

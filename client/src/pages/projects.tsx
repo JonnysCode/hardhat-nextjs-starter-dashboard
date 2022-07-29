@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { Layout } from '@/components/Layout/Layout'
+import Layout from '@/components/Layout/Layout'
 
 const Team: NextPage = () => {
   return (

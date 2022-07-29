@@ -1,4 +1,4 @@
-import { Layout } from '@/components/Layout/Layout'
+import Layout from '@/components/Layout/Layout'
 
 function Page404() {
   return (
@@ -10,7 +10,7 @@ function Page404() {
         <p className="text-gray-700 dark:text-gray-300">
           Page not found. Check the address or{' '}
           <a
-            className="text-primary-600 hover:underline dark:text-primary-300"
+            className="text-primary-600 dark:text-primary-300 hover:underline"
             href="/"
           >
             go back

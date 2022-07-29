@@ -1,0 +1,3 @@
+ul.menu > li {
+  @apply rounded-none;
+}

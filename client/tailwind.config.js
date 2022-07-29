@@ -32,18 +32,6 @@ module.exports = {
       maxWidth: {
         '8xl': '88rem',
       },
-      colors: {
-        primary: {
-          light: '#858ae8',
-          DEFAULT: '#676de3',
-          dark: '#5c62cc',
-        },
-        secondary: {
-          light: '#85e8b2',
-          DEFAULT: '#67e39f',
-          dark: '#5ccc8f',
-        },
-      },
     },
   },
 
@@ -51,20 +39,21 @@ module.exports = {
     themes: [
       {
         light: {
-          primary: '#8a4af3',
-          secondary: '#86efac',
-          accent: '#fcd34d',
+          primary: '#676de3',
+          secondary: '#67e39f',
+          accent: '#e3dd67',
           neutral: '#e4e5f6',
           'base-100': '#f8fafc',
           'base-200': '#f1f2fc',
           'base-300': '#fff',
+          'base-content': '#1d1955',
         },
       },
       {
         dark: {
-          primary: '#8a4af3',
-          secondary: '#86efac',
-          accent: '#fcd34d',
+          primary: '#676de3',
+          secondary: '#67e39f',
+          accent: '#e3dd67',
           neutral: '#e4e5f6',
           'base-100': '#20252f',
           'base-200': '#1c212a',

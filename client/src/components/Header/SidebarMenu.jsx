@@ -1,11 +1,6 @@
-import { useContext } from 'react'
 import { MenuAlt2Icon } from '@heroicons/react/outline'
 
-import SidebarContext from '@/context/SidebarContext'
-
 export function SidebarMenu() {
-  const { toggleSidebar } = useContext(SidebarContext)
-
   return (
     <div className="mx-3 my-2 flex items-center">
       <label

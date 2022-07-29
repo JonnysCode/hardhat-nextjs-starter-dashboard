@@ -1,5 +1,12 @@
 @import './fonts.css';
 
 @tailwind base;
+
 @tailwind components;
+
+.menu[class*=' p-'] li > *,
+.menu[class^='p-'] li > * {
+  @apply rounded-none;
+}
+
 @tailwind utilities;

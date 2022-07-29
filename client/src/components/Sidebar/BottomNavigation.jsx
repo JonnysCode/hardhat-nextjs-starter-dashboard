@@ -45,34 +45,6 @@ export function BottomNavigation({ isMobile }) {
             </Link>
           ))}
         </div>
-
-        <div className="rounded-2xl bg-base-200 p-4">
-          <div className="flex flex-row justify-between divide-x divide-dotted divide-gray-400 text-center dark:divide-gray-500">
-            {bottomDisclaimer.map((item) => (
-              <Link href={item.href} key={item.name}>
-                <a className="basis-1/3 text-xs text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-300">
-                  {item.name}
-                </a>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-4 flex justify-center">
-            {bottomIcons.map((item) => (
-              <Link href={item.href} key={item.name}>
-                <a className="space-x-4">
-                  <item.icon
-                    className={classNames(
-                      'text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-300',
-                      'mx-2 h-4 w-4 flex-shrink-0'
-                    )}
-                    aria-hidden="true"
-                  />
-                </a>
-              </Link>
-            ))}
-          </div>
-        </div>
       </nav>
     </div>
   )
