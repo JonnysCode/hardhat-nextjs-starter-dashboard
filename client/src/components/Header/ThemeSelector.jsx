@@ -8,9 +8,6 @@ import {
   DesktopComputerIcon,
 } from '@heroicons/react/outline'
 
-import { useDaisyTheme } from '@/utils/daisyUtils'
-import { DaisyThemeContext } from '@/context/DaisyThemeContext'
-
 const themes = [
   { name: 'Light', value: 'light', icon: SunIcon },
   { name: 'Dark', value: 'dark', icon: MoonIcon },
@@ -18,16 +15,16 @@ const themes = [
 ]
 
 export function ThemeSelector(props) {
-  const { daisyTheme, setDaisyTheme } = useContext(DaisyThemeContext)
+  const { theme, setTheme } = useTheme()
   const [selectedTheme, setSelectedTheme] = useState(
-    themes.find((t) => t.value === daisyTheme)
+    themes.find((t) => t.value === theme)
   )
 
   useEffect(() => {
     if (!selectedTheme) {
-      setSelectedTheme(themes.find((t) => t.value === daisyTheme))
+      setSelectedTheme(themes.find((t) => t.value === theme))
     } else {
-      setDaisyTheme(selectedTheme.value)
+      setTheme(selectedTheme.value)
     }
   }, [selectedTheme])
 
@@ -45,17 +42,17 @@ export function ThemeSelector(props) {
       >
         <SunIcon
           className={clsx(
-            'block h-4 w-4 dark:hidden',
+            'block h-5 w-5 dark:hidden',
             selectedTheme?.value === 'light'
-              ? 'dark:fill-primary-light fill-primary'
+              ? 'fill-primary-content text-primary'
               : 'fill-zinc-400'
           )}
         />
         <MoonIcon
           className={clsx(
-            'hidden h-4 w-4 dark:block',
+            'hidden h-5 w-5 dark:block',
             selectedTheme?.value === 'dark'
-              ? 'dark:fill-primary-light fill-primary text-secondary'
+              ? 'fill-primary-content text-primary'
               : 'fill-zinc-400/20'
           )}
         />
