@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 const themeElementId = 'theme-toggle'
 
 const color = (name: string, desc?: string) => {
@@ -30,4 +32,18 @@ const getCssVariable = (name: string, desc?: string) => {
   }
 }
 
-export { color, themeElementId }
+const useDaisyTheme = (theme: string) => {
+  const [daisyTheme, setDaisyTheme] = useState<string>()
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    let dataTheme =
+      document.documentElement.getAttribute('data-theme') ?? 'system'
+    setDaisyTheme(dataTheme)
+    console.log('Set theme to', dataTheme)
+  }, [theme])
+
+  return [daisyTheme]
+}
+
+export { color, themeElementId, useDaisyTheme }

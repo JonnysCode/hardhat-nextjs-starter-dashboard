@@ -2,12 +2,11 @@ import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit'
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { publicProvider } from 'wagmi/providers/public'
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
 import { themeElementId } from '@/utils/daisyUtils'
 import LoaderBackground from '@/components/Loader/LoaderBackground'
-import { theme } from '@/utils/rainbowUtils'
+import { daisyTheme } from '@/utils/rainbowUtils'
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon],
@@ -25,7 +24,7 @@ const wagmiClient = createClient({
   provider,
 })
 
-const daisyTheme = theme()
+const theme = daisyTheme()
 
 const Web3Wrapper = ({ children }: any) => {
   const [showLoader, setShowLoaderState] = useState(true)
@@ -41,7 +40,7 @@ const Web3Wrapper = ({ children }: any) => {
     <LoaderBackground />
   ) : (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider coolMode chains={chains} theme={daisyTheme}>
+      <RainbowKitProvider coolMode chains={chains} theme={theme}>
         <div id={themeElementId}>{children}</div>
       </RainbowKitProvider>
     </WagmiConfig>

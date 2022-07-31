@@ -7,6 +7,7 @@ import { ThemeProvider } from 'next-themes'
 import { themeChange } from 'theme-change'
 
 import Web3Wrapper from '@/components/Layout/Web3Wrapper'
+import DaisyThemeProvider from '@/context/DaisyThemeContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
   // suppress useLayoutEffect warnings when running outside a browser
@@ -17,11 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <ThemeProvider defaultTheme="system" attribute="class">
+    <DaisyThemeProvider>
       <Web3Wrapper>
         <Component {...pageProps} />
       </Web3Wrapper>
-    </ThemeProvider>
+    </DaisyThemeProvider>
   )
 }
 

@@ -9,8 +9,4 @@
   @apply rounded-none;
 }
 
-main {
-  background-color: hsl(var(--b3));
-}
-
 @tailwind utilities;

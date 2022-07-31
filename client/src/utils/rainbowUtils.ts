@@ -31,7 +31,7 @@ const useRainbowTheme = (): Theme => {
   return rainbowTheme
 }
 
-const theme = (): Theme => {
+const daisyTheme = (): Theme => {
   const myTheme = merge(lightTheme(), {
     colors: {
       accentColor: 'hsl(var(--p))',
@@ -76,4 +76,4 @@ const theme = (): Theme => {
   return myTheme
 }
 
-export { useRainbowTheme, theme }
+export { useRainbowTheme, daisyTheme }
