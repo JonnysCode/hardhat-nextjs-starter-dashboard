@@ -1,0 +1,3 @@
+.hide > div:last-child > div {
+  @apply hidden;
+}

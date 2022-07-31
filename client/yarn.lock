@@ -4150,6 +4150,11 @@
   "resolved" "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
   "version" "0.2.0"
 
+"theme-change@^2.1.0":
+  "integrity" "sha512-D8SZJR599b39VrWCgNTINAQYjTc7XbypoIFaDT1iwbH2IHEhTb5IqWHBwXIpJWDYFtfV7FhlHUVy0PlewPYgLQ=="
+  "resolved" "https://registry.npmjs.org/theme-change/-/theme-change-2.1.0.tgz"
+  "version" "2.1.0"
+
 "to-fast-properties@^2.0.0":
   "integrity" "sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog=="
   "resolved" "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz"

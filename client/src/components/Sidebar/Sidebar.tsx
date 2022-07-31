@@ -42,7 +42,6 @@ export function Sidebar({ children }: any) {
               linkClicked={linkClickedHandler}
               className="mb-4"
             />
-
             <SidebarFooter />
           </div>
         </div>

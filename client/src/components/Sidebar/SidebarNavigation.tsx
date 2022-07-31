@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import navigation, { routeIsActive, INavigation } from '@/routes/sidebar'
+import { routeIsActive, INavigation } from '@/routes/sidebar'
 import clsx from 'clsx'
 
 interface IProps {
@@ -20,9 +20,9 @@ const SidebarNavigation = ({ navigation, linkClicked, className }: IProps) => {
           className={clsx(
             routeIsActive(pathname, item)
               ? 'bordered text-primary'
-              : 'opacity-75',
-            'my-0 py-0'
+              : 'opacity-75'
           )}
+          key={item.name}
         >
           <Link href={item.href} key={item.name}>
             <a className="text-sm font-semibold" onClick={linkClicked}>
