@@ -1,35 +1,5 @@
-import { useEffect, useState } from 'react'
-import { darkTheme, lightTheme, Theme } from '@rainbow-me/rainbowkit'
+import { lightTheme, Theme } from '@rainbow-me/rainbowkit'
 import merge from 'lodash.merge'
-
-import { color } from '@/utils/daisyUtils'
-
-const themeFromDaisy = (theme: string | undefined): Theme => {
-  const myTheme = merge(theme === 'dark' ? darkTheme() : lightTheme(), {
-    colors: {
-      accentColor: color('primary'),
-      connectButtonBackground: color('base', '300'),
-      connectButtonInnerBackground: color('base', '100'),
-      menuItemBackground: color('base', '300'),
-      modalBackground: color('base', '300'),
-    },
-  } as Theme)
-
-  return myTheme
-}
-
-const useRainbowTheme = (): Theme => {
-  const [rainbowTheme, setRainbowTheme] = useState<Theme>(lightTheme())
-
-  useEffect(() => {
-    let theme = document.documentElement.getAttribute('data-theme') ?? 'light'
-    let t = themeFromDaisy(theme)
-    setRainbowTheme(t)
-    console.log('Update theme to', theme, t)
-  }, [])
-
-  return rainbowTheme
-}
 
 const daisyTheme = (): Theme => {
   const myTheme = merge(lightTheme(), {
@@ -76,4 +46,4 @@ const daisyTheme = (): Theme => {
   return myTheme
 }
 
-export { useRainbowTheme, daisyTheme }
+export { daisyTheme }

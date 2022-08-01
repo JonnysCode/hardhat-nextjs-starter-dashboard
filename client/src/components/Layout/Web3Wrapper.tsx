@@ -4,7 +4,6 @@ import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { publicProvider } from 'wagmi/providers/public'
 import { useEffect, useState } from 'react'
 
-import { themeElementId } from '@/utils/daisyUtils'
 import LoaderBackground from '@/components/Loader/LoaderBackground'
 import { daisyTheme } from '@/utils/rainbowUtils'
 
@@ -41,7 +40,7 @@ const Web3Wrapper = ({ children }: any) => {
   ) : (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider coolMode chains={chains} theme={theme}>
-        <div id={themeElementId}>{children}</div>
+        <div>{children}</div>
       </RainbowKitProvider>
     </WagmiConfig>
   )

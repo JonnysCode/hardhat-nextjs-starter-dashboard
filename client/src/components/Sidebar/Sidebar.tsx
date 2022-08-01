@@ -1,12 +1,8 @@
 import { Fragment, useRef, useContext } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { XIcon } from '@heroicons/react/outline'
 
 import navigation, { bottomNavigation } from '@/routes/sidebar'
 import SidebarContext from '@/context/SidebarContext'
-import { Navigation } from '@/components/Sidebar/Navigation'
 import { Logo } from '@/components/Sidebar/Logo'
-import { BottomNavigation } from '@/components/Sidebar/BottomNavigation'
 import SidebarFooter from './SidebarFooter'
 import SidebarNavigation from './SidebarNavigation'
 
@@ -19,7 +15,7 @@ export function Sidebar({ children }: any) {
   }
 
   return (
-    <div className="drawer-mobile drawer">
+    <div className="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col justify-center">
         {children}
