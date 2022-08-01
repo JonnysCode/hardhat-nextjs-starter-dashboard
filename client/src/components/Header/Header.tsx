@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const Header = ({ title }: HeaderProps) => {
   return (
-    <div className="navbar sticky top-0 bg-base-100 bg-opacity-30 backdrop-blur-md">
+    <div className="navbar sticky top-0 bg-base-200 bg-opacity-30 backdrop-blur-md">
       <div className="">
         <SidebarMenu />
         <h1 className="mt-2 text-3xl font-bold">{title}</h1>

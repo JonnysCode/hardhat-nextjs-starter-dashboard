@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <ThemeProvider themes={['light', 'dark', 'cupcake']}>
+    <ThemeProvider themes={['light', 'dark', 'cupcake', 'lofi', 'cyberpunk']}>
       <Web3Wrapper>
         <Component {...pageProps} />
       </Web3Wrapper>

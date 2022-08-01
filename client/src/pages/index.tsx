@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex-grow items-center justify-center py-10 px-20 text-center">
+      <main className="[data-theme=cupcake]:text-accent flex-grow items-center justify-center py-10 px-20 text-center">
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
           <a className="text-secondary" href="https://nextjs.org">

@@ -3,12 +3,19 @@ import { Listbox } from '@headlessui/react'
 import clsx from 'clsx'
 import { useTheme } from 'next-themes'
 import { SunIcon, DesktopComputerIcon } from '@heroicons/react/outline'
-import { TbCandy, TbMoonStars } from 'react-icons/tb'
+import {
+  TbBuildingSkyscraper,
+  TbCandy,
+  TbMoonStars,
+  TbPacman,
+} from 'react-icons/tb'
 
 const themes = [
   { name: 'Light', value: 'light', icon: SunIcon },
   { name: 'Dark', value: 'dark', icon: TbMoonStars },
   { name: 'Cupcake', value: 'cupcake', icon: TbCandy },
+  { name: 'Lofi', value: 'lofi', icon: TbBuildingSkyscraper },
+  { name: 'Cyberpunk', value: 'cyberpunk', icon: TbPacman },
   { name: 'System', value: 'system', icon: DesktopComputerIcon },
 ]
 
@@ -39,7 +46,7 @@ export function ThemeSelector(props) {
     >
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
       <Listbox.Button
-        className="flex h-6 w-6 items-center justify-center rounded-lg bg-base-300 shadow-lg ring-1 ring-base-200"
+        className="flex h-6 w-6 items-center justify-center rounded-lg bg-base-100 shadow-lg ring-1 ring-base-300"
         aria-label={selectedTheme?.name}
       >
         {themes.map((theme) => (
@@ -55,7 +62,7 @@ export function ThemeSelector(props) {
           />
         ))}
       </Listbox.Button>
-      <Listbox.Options className="absolute left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-base-300 p-2 text-sm font-medium shadow-md ring-1 ring-base-200">
+      <Listbox.Options className="absolute left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-base-100 p-2 text-sm font-medium shadow-md ring-1 ring-base-300">
         {themes.map((theme) => (
           <Listbox.Option
             key={theme.value}
@@ -74,7 +81,7 @@ export function ThemeSelector(props) {
           >
             {({ selected }) => (
               <>
-                <div className="rounded-md bg-base-100 p-1 ring-1 ring-base-200">
+                <div className="rounded-md bg-base-100 p-1 ring-1 ring-base-300">
                   <theme.icon
                     className={clsx('h-5 w-5', {
                       'fill-primary/40 text-primary': selected,

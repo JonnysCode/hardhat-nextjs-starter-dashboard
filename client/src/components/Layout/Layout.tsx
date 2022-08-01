@@ -1,6 +1,7 @@
 import { Sidebar } from '@/components/Sidebar/Sidebar'
 import Header from '@/components/Header/Header'
 import { SidebarProvider } from '@/context/SidebarContext'
+import clsx from 'clsx'
 
 interface Props {
   title?: string
@@ -11,7 +12,7 @@ interface Props {
 const Layout = ({ title, children, className }: Props) => {
   return (
     <SidebarProvider>
-      <div className={className}>
+      <div className={clsx(className, 'bg-base-200')}>
         <Sidebar>
           <div className="flex min-h-screen flex-col">
             <Header title={title} />

@@ -18,7 +18,7 @@ const Team: NextPage = () => {
           {items.map((item) => (
             <li
               key={item.id}
-              className="h-64 w-full overflow-hidden rounded-3xl bg-base-300 shadow-xl"
+              className="h-64 w-full overflow-hidden rounded-3xl bg-base-100 shadow-xl"
             >
               {/* Your content */}
             </li>
