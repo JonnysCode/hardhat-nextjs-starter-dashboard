@@ -54,7 +54,12 @@ export function routeIsActive(pathname: String, route: INavigation): boolean {
 
 const navigation: INavigation[] = [
   { name: 'Dashboard', href: '/', icon: HomeIcon, current: true, exact: true },
-  { name: 'Team', href: '/team', icon: UsersIcon, current: false },
+  {
+    name: 'Theme Preview',
+    href: '/themePreview',
+    icon: UsersIcon,
+    current: false,
+  },
   { name: 'Projects', href: '/projects', icon: FolderIcon, current: false },
   { name: 'Calendar', href: '/calendar', icon: CalendarIcon, current: false },
   { name: 'Documents', href: '/documents', icon: InboxIcon, current: false },

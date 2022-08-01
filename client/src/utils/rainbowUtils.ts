@@ -21,7 +21,7 @@ const daisyTheme = (): Theme => {
       generalBorder: 'hsl(var(--b3))',
       generalBorderDim: 'hsl(var(--p))',
       menuItemBackground: 'hsl(var(--b1))',
-      //modalBackdrop: 'hsl(var(--s))',
+      //modalBackdrop: 'hsl(var(--s))',      => card border: hsl(var(--b2, var(--b1)) / var(--tw-border-opacity))
       modalBackground: 'hsl(var(--b1))',
       modalBorder: 'transparent',
       modalText: 'hsl(var(--bc))',

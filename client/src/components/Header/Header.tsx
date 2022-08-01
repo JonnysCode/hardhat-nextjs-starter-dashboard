@@ -9,15 +9,23 @@ interface HeaderProps {
 
 const Header = ({ title }: HeaderProps) => {
   return (
-    <div className="navbar sticky top-0 bg-base-200 bg-opacity-30 backdrop-blur-md">
-      <div className="">
-        <SidebarMenu />
-        <h1 className="mt-2 text-3xl font-bold">{title}</h1>
-      </div>
+    <div className="navbar sticky top-0 z-50 bg-base-200 bg-opacity-30 p-4 backdrop-blur-md">
+      <div className="flex flex-grow justify-between gap-3">
+        <div className="flex flex-row gap-3">
+          <div className="flex lg:hidden">
+            <SidebarMenu />
+          </div>
+          <div className="flex flex-auto items-center">
+            <h1 className="text-md align-middle font-bold leading-none text-primary sm:text-2xl">
+              {title}
+            </h1>
+          </div>
+        </div>
 
-      <div className="absolute right-0 flex items-center justify-end gap-4 px-3 md:flex-grow">
-        <ThemeSelector className="relative z-10" />
-        <ConnectButton />
+        <div className="flex flex-auto items-center justify-end gap-3">
+          <ThemeSelector className="relative z-10" />
+          <ConnectButton />
+        </div>
       </div>
     </div>
   )
