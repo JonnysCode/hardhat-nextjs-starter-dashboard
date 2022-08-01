@@ -45,8 +45,9 @@ export function ThemeSelector(props) {
       {...props}
     >
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
+
       <Listbox.Button
-        className="flex h-6 w-6 items-center justify-center rounded-lg bg-base-100 shadow-lg ring-1 ring-base-300"
+        className="btn btn-ghost btn-square btn-xs bg-base-100 shadow-lg ring-base-300"
         aria-label={selectedTheme?.name}
       >
         {themes.map((theme) => (
@@ -62,14 +63,15 @@ export function ThemeSelector(props) {
           />
         ))}
       </Listbox.Button>
-      <Listbox.Options className="absolute left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 rounded-xl bg-base-100 p-2 text-sm font-medium shadow-md ring-1 ring-base-300">
+
+      <Listbox.Options className="rounded-box absolute left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 bg-base-100 p-2 text-sm font-medium shadow-md ring-1 ring-base-300">
         {themes.map((theme) => (
           <Listbox.Option
             key={theme.value}
             value={theme}
             className={({ active, selected }) =>
               clsx(
-                'flex cursor-pointer select-none items-center rounded-lg p-1',
+                'rounded-box flex cursor-pointer select-none items-center p-1',
                 {
                   'text-primary': selected,
                   'text-base-content': active && !selected,
@@ -81,7 +83,7 @@ export function ThemeSelector(props) {
           >
             {({ selected }) => (
               <>
-                <div className="rounded-md bg-base-100 p-1 ring-1 ring-base-300">
+                <div className="rounded-box bg-base-100 p-1 ring-1 ring-base-300">
                   <theme.icon
                     className={clsx('h-5 w-5', {
                       'fill-primary/40 text-primary': selected,

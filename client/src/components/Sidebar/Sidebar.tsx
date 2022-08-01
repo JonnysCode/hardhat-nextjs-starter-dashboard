@@ -15,7 +15,7 @@ export function Sidebar({ children }: any) {
   }
 
   return (
-    <div className="drawer drawer-mobile">
+    <div className="drawer-mobile drawer">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col justify-center">
         {children}
@@ -23,11 +23,11 @@ export function Sidebar({ children }: any) {
       <div className="drawer-side">
         <label
           htmlFor="my-drawer-2"
-          className="drawer-overlay drawer-button z-10 backdrop-blur-md"
+          className="drawer-button drawer-overlay z-10 backdrop-blur-md"
         ></label>
         <div className="menu z-0 w-72 p-3 pr-4 text-base-content">
-          <div className="flex h-full flex-col rounded-3xl bg-base-100 shadow-xl">
-            <Logo isMobile={false} />
+          <div className="card h-full bg-base-100 shadow-xl">
+            <Logo />
             <SidebarNavigation
               navigation={navigation}
               linkClicked={linkClickedHandler}

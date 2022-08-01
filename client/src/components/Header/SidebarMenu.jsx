@@ -6,10 +6,10 @@ export function SidebarMenu(...props) {
       <div className="flex items-center">
         <label
           htmlFor="my-drawer-2"
-          className="btn btn-ghost btn-square drawer-button lg:hidden"
+          className="drawer-button btn btn-ghost btn-square lg:hidden"
         >
           <span className="sr-only">Open sidebar</span>
-          <MenuAlt2Icon className="h-8 w-8" aria-hidden="true" />
+          <MenuAlt2Icon className="h-7 w-7" aria-hidden="true" />
         </label>
       </div>
     </div>

@@ -23,7 +23,7 @@ const Header = ({ title }: HeaderProps) => {
         </div>
 
         <div className="flex flex-auto items-center justify-end gap-3">
-          <ThemeSelector className="relative z-10" />
+          <ThemeSelector className="pt-1" />
           <ConnectButton />
         </div>
       </div>

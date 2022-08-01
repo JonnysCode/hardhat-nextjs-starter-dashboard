@@ -28,10 +28,17 @@ const daisyTheme = (): Theme => {
       modalTextDim: 'hsl(var(--pc))',
       modalTextSecondary: 'hsl(var(--p))',
       profileAction: 'hsl(var(--b3))',
-      profileActionHover: 'hsl(var(--p))',
+      profileActionHover: 'rgba(99, 99, 99, 0.2)',
       profileForeground: 'hsl(var(--b1))',
       selectedOptionBorder: 'hsl(var(--b1))',
       standby: '#FFD641',
+    },
+    radii: {
+      actionButton: 'var(--rounded-box, 1rem)',
+      connectButton: 'var(--rounded-box, 1rem)',
+      menuButton: 'var(--rounded-box, 1rem)',
+      modal: 'var(--rounded-box, 1rem)',
+      modalMobile: 'var(--rounded-box, 1rem)',
     },
     shadows: {
       connectButton: '0px 4px 12px rgba(0, 0, 0, 0.1)',
