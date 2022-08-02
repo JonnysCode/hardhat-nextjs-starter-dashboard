@@ -9,4 +9,22 @@
   @apply rounded-none;
 }
 
+/* Custom Scrollbar based on DaisyUI Theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--b1));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--b3));
+  border-radius: var(--rounded-box, 1rem);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--p));
+}
+
 @tailwind utilities;
