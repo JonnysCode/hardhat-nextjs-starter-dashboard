@@ -1,6 +1,6 @@
 import { MenuAlt2Icon } from '@heroicons/react/outline'
 
-export function SidebarMenu(...props) {
+const SidebarToggle = (...props: any) => {
   return (
     <div {...props}>
       <div className="flex items-center">
@@ -15,3 +15,5 @@ export function SidebarMenu(...props) {
     </div>
   )
 }
+
+export default SidebarToggle

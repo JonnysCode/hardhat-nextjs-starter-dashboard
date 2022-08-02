@@ -1,7 +1,7 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
-import { ThemeSelector } from '@/components/Header/ThemeSelector'
-import { SidebarMenu } from '@/components/Header/SidebarMenu'
+import ThemeSelector from '@/components/Header/ThemeSelector'
+import SidebarToggle from '@/components/Header/SidebarToggle'
 
 interface HeaderProps {
   title?: string
@@ -13,7 +13,7 @@ const Header = ({ title }: HeaderProps) => {
       <div className="flex flex-grow justify-between gap-3">
         <div className="flex flex-row gap-3">
           <div className="flex lg:hidden">
-            <SidebarMenu />
+            <SidebarToggle />
           </div>
           <div className="flex flex-auto items-center">
             <h1 className="text-md align-middle font-bold leading-none text-primary sm:text-2xl">

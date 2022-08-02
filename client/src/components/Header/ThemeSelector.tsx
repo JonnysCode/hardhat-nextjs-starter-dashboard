@@ -10,7 +10,13 @@ import {
   TbPacman,
 } from 'react-icons/tb'
 
-const themes = [
+interface Theme {
+  name: string
+  value: string
+  icon: any
+}
+
+const themes: Theme[] = [
   { name: 'Light', value: 'light', icon: SunIcon },
   { name: 'Dark', value: 'dark', icon: TbMoonStars },
   { name: 'Cupcake', value: 'cupcake', icon: TbCandy },
@@ -19,11 +25,11 @@ const themes = [
   { name: 'System', value: 'system', icon: DesktopComputerIcon },
 ]
 
-const getTheme = (theme) => {
+const getTheme = (theme: string | undefined) => {
   return themes.find((t) => t.value === theme)
 }
 
-export function ThemeSelector(props) {
+const ThemeSelector = (props: any) => {
   const { theme, resolvedTheme, setTheme } = useTheme()
   const [selectedTheme, setSelectedTheme] = useState(
     themes.find((t) => t.value === theme)
@@ -56,7 +62,7 @@ export function ThemeSelector(props) {
             className={clsx(
               'h-5 w-5',
               theme.value === resolvedTheme ? 'block' : 'hidden',
-              selectedTheme.value === 'system'
+              selectedTheme?.value === 'system'
                 ? 'fill-base-content/40 text-base-content'
                 : 'fill-primary/40 text-primary'
             )}
@@ -99,3 +105,5 @@ export function ThemeSelector(props) {
     </Listbox>
   )
 }
+
+export default ThemeSelector

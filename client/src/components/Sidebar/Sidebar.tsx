@@ -25,7 +25,7 @@ export function Sidebar({ children }: any) {
           htmlFor="my-drawer-2"
           className="drawer-button drawer-overlay z-10 backdrop-blur-md"
         ></label>
-        <div className="menu z-0 w-72 p-3 pr-4 text-base-content">
+        <div className="menu z-0 w-72 p-3 pr-5 text-base-content">
           <div className="card h-full bg-base-100 shadow-xl">
             <Logo />
             <SidebarNavigation
