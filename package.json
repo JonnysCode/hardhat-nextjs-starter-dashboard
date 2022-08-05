@@ -1,23 +1,12 @@
 {
-  "name": "t-carbon",
+  "name": "hardhat-nextjs-starter-dashboard",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "t-carbon"
-  },
-  "author": "Jonathan Gruss",
-  "license": "ISC",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
-    "hardhat": "^2.10.0"
-  },
-  "overrides": {
-    "got": "^12.3.0",
-    "undici": "^5.8.1"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
