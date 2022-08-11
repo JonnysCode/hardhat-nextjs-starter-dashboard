@@ -1,7 +1,14 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
-import ThemeSelector from '@/components/Header/ThemeSelector'
 import SidebarToggle from '@/components/Header/SidebarToggle'
+import dynamic from 'next/dynamic'
+
+const ThemeSelector = dynamic(
+  () => import('@/components/Header/ThemeSelector'),
+  {
+    ssr: false,
+  }
+)
 
 interface HeaderProps {
   title?: string

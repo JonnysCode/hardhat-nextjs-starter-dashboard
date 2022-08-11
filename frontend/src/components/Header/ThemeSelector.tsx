@@ -10,13 +10,13 @@ import {
   TbPacman,
 } from 'react-icons/tb'
 
-interface Theme {
+interface ThemeOption {
   name: string
   value: string
   icon: any
 }
 
-const themes: Theme[] = [
+const themes: ThemeOption[] = [
   { name: 'Light', value: 'light', icon: SunIcon },
   { name: 'Dark', value: 'dark', icon: TbMoonStars },
   { name: 'Cupcake', value: 'cupcake', icon: TbCandy },
@@ -25,22 +25,20 @@ const themes: Theme[] = [
   { name: 'System', value: 'system', icon: DesktopComputerIcon },
 ]
 
+const defaultTheme: ThemeOption = themes[0]
+
 const getTheme = (theme: string | undefined) => {
   return themes.find((t) => t.value === theme)
 }
 
 const ThemeSelector = (props: any) => {
-  const { theme, resolvedTheme, setTheme } = useTheme()
-  const [selectedTheme, setSelectedTheme] = useState(
-    themes.find((t) => t.value === theme)
+  const { theme, setTheme } = useTheme()
+  const [selectedTheme, setSelectedTheme] = useState<ThemeOption>(
+    getTheme(theme) ?? defaultTheme
   )
 
   useEffect(() => {
-    if (!selectedTheme) {
-      setSelectedTheme(getTheme(theme))
-    } else {
-      setTheme(selectedTheme.value)
-    }
+    setTheme(selectedTheme.value)
   }, [selectedTheme])
 
   return (
@@ -56,18 +54,16 @@ const ThemeSelector = (props: any) => {
         className="btn btn-ghost btn-square btn-xs bg-base-100 shadow-lg ring-base-300"
         aria-label={selectedTheme?.name}
       >
-        {themes.map((theme) => (
-          <theme.icon
-            key={theme.value}
+        {selectedTheme ? (
+          <selectedTheme.icon
             className={clsx(
               'h-5 w-5',
-              theme.value === resolvedTheme ? 'block' : 'hidden',
-              selectedTheme?.value === 'system'
+              selectedTheme.value === 'system'
                 ? 'fill-base-content/40 text-base-content'
                 : 'fill-primary/40 text-primary'
             )}
           />
-        ))}
+        ) : null}
       </Listbox.Button>
 
       <Listbox.Options className="rounded-box absolute left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 bg-base-100 p-2 text-sm font-medium shadow-md ring-1 ring-base-300">

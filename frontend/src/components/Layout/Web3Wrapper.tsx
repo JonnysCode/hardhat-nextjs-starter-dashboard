@@ -26,11 +26,12 @@ const wagmiClient = createClient({
 const theme = daisyTheme()
 
 const Web3Wrapper = ({ children }: any) => {
-  const [showLoader, setShowLoaderState] = useState(true)
+  const [showLoader, setShowLoaderState] = useState(false)
 
   useEffect(() => {
     return () => {
       // Waiting to resolve variables from localStorage (Theme, ScrollPosition)
+      console.log('Show loader state', showLoader)
       setShowLoaderState(false)
     }
   }, [])

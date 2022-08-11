@@ -44,27 +44,29 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
   }
 
   const defaultScrollY = useMemo(() => {
+    console.log('default scrollY -> useMemo')
     return { id: null, position: 0 }
   }, [])
 
   const storageScrollY = useCallback(() => {
+    console.log('storageScrollY -> useCallback')
     return JSON.parse(
       localStorage.getItem('sidebarScrollY') || JSON.stringify(defaultScrollY)
     )
   }, [defaultScrollY])
 
-  const [scrollY, setScrollY] = useState<IScrollY>(
-    typeof window ? storageScrollY() : defaultScrollY
-  )
+  const [scrollY, setScrollY] = useState<IScrollY>(defaultScrollY)
 
   function saveScroll(el: HTMLElement | null) {
     const id = el?.id || null
     const position = el?.scrollTop || 0
+    console.log('Setting scrollY to: ' + position, 'for id: ' + id)
     setScrollY({ id, position })
   }
 
   useEffect(() => {
     if (typeof window) {
+      console.log('set scrollY => useEffect ')
       localStorage.setItem('sidebarScrollY', JSON.stringify(scrollY))
     }
   }, [scrollY])
@@ -78,7 +80,7 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
         document.getElementById(id)?.scrollTo(0, position)
       }
     }
-  }, [scrollY, storageScrollY, isSidebarOpen])
+  }, [scrollY, storageScrollY])
 
   const context = {
     isSidebarOpen,
