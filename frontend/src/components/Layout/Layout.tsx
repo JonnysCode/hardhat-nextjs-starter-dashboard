@@ -17,9 +17,7 @@ const Layout = ({ title, children, className }: Props) => {
           <div className="flex min-h-screen flex-col">
             <Header title={title} />
 
-            <div className="mx-4 mb-4 block flex-grow rounded-2xl">
-              {children}
-            </div>
+            <div className="mx-4 mb-4 block flex-grow">{children}</div>
           </div>
         </Sidebar>
       </div>
