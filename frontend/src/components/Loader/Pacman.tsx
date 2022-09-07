@@ -17,15 +17,10 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-import LoaderBackground from './LoaderBackground'
 import styles from './Pacman.module.css'
 
 const Pacman = () => {
-  return (
-    <LoaderBackground>
-      <div className={`${styles.PacMan}`} />
-    </LoaderBackground>
-  )
+  return <div className={`${styles.PacMan}`} />
 }
 
 export default Pacman
