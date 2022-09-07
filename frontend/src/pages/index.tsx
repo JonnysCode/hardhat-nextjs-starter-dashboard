@@ -21,12 +21,12 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex-grow items-center justify-center py-10 px-20 text-center">
-        <h1 className="text-6xl font-bold">
+        <h1 className="my-12 text-6xl font-bold">
           <span className="text-secondary">Web3</span> starter template
         </h1>
 
-        <p className="mx-48 mt-3 text-left text-xl">
-          <ul className="list-disc ">
+        <div className="mx-auto max-w-xl">
+          <ul className="list-outside list-disc text-left text-xl">
             <li>Only OpenSource libraries used</li>
             <li>
               <a
@@ -84,10 +84,21 @@ const Home: NextPage = () => {
               React hooks for Ethereum
             </li>
           </ul>
-        </p>
+        </div>
 
-        <div className="btn btn-primary m-12" onClick={() => sendTransaction()}>
-          <p>Donate some ETH</p>
+        <div className="m-12 flex-row gap-6">
+          <a
+            className="btn btn-secondary m-3"
+            href="https://github.com/JonnysCode/hardhat-nextjs-starter-dashboard"
+          >
+            Star it on GitHub
+          </a>
+          <div
+            className="btn btn-primary m-3"
+            onClick={() => sendTransaction()}
+          >
+            <p>Donate some ETH</p>
+          </div>
         </div>
       </main>
     </Layout>
