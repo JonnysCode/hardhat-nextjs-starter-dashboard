@@ -24,8 +24,8 @@ const ThemePreview: NextPage = () => {
 
       <main className="flex w-full flex-col py-3">
         <SectionHeader title="Colors" />
-        <div className="flex flex-wrap justify-between gap-5 font-semibold">
-          <div className="card h-48 w-48 gap-2 bg-base-100 p-2 shadow-xl">
+        <div className="grid grid-cols-1 gap-5 font-semibold sm:grid-cols-2 md:grid-cols-4">
+          <div className="card h-48 gap-2 bg-base-100 p-2 shadow-xl">
             <div className="card flex-1 items-center justify-center bg-primary">
               <h3 className="text-center text-primary-content">primary</h3>
             </div>
@@ -39,7 +39,7 @@ const ThemePreview: NextPage = () => {
             </div>
           </div>
 
-          <div className="card h-48 w-48 gap-2 bg-base-100 p-2 shadow-xl">
+          <div className="card h-48 gap-2 bg-base-100 p-2 shadow-xl">
             <div className="card flex-1 items-center justify-center bg-secondary">
               <h3 className="text-center text-secondary-content">secondary</h3>
             </div>
@@ -53,7 +53,7 @@ const ThemePreview: NextPage = () => {
             </div>
           </div>
 
-          <div className="card h-48 w-48 gap-2 bg-base-100 p-2 shadow-xl">
+          <div className="card h-48 gap-2 bg-base-100 p-2 shadow-xl">
             <div className="card flex-1 items-center justify-center bg-accent">
               <h3 className="text-center text-accent-content">accent</h3>
             </div>
@@ -65,7 +65,7 @@ const ThemePreview: NextPage = () => {
             </div>
           </div>
 
-          <div className="card h-48 w-48 gap-2 bg-base-100 p-2 shadow-xl">
+          <div className="card h-48 gap-2 bg-base-100 p-2 shadow-xl">
             <div className="card flex-1 items-center justify-center bg-neutral">
               <h3 className="text-center text-neutral-content">neutral</h3>
             </div>
@@ -79,7 +79,7 @@ const ThemePreview: NextPage = () => {
             </div>
           </div>
 
-          <div className="card h-48 w-48 gap-2 bg-base-100 p-2 shadow-xl">
+          <div className="card h-48 gap-2 bg-base-100 p-2 shadow-xl">
             <div className="card flex-1 items-center justify-center border border-base-300 bg-base-100">
               <h3 className="text-center text-base-content">base-100</h3>
             </div>
@@ -94,7 +94,7 @@ const ThemePreview: NextPage = () => {
             </div>
           </div>
 
-          <div className="card h-48 w-48 gap-2 bg-base-100 p-2 shadow-xl">
+          <div className="card h-48 gap-2 bg-base-100 p-2 shadow-xl">
             <div className="card flex-1 items-center justify-center bg-info">
               <h3 className="text-center text-info-content">info</h3>
             </div>
@@ -109,7 +109,7 @@ const ThemePreview: NextPage = () => {
             </div>
           </div>
 
-          <div className="card h-48 w-48 gap-2 bg-base-100 p-2 shadow-xl">
+          <div className="card h-48 gap-2 bg-base-100 p-2 shadow-xl">
             <div className="card flex-1 items-center justify-center bg-warning">
               <h3 className="text-center text-warning-content">warning</h3>
             </div>
@@ -124,7 +124,7 @@ const ThemePreview: NextPage = () => {
             </div>
           </div>
 
-          <div className="card h-48 w-48 bg-base-100 shadow-xl"></div>
+          <div className="card h-48 bg-base-100 shadow-xl"></div>
         </div>
       </main>
     </Layout>

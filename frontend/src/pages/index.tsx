@@ -1,8 +1,18 @@
 import Layout from '@/components/Layout/Layout'
+import { BigNumber } from 'ethers'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useSendTransaction } from 'wagmi'
 
 const Home: NextPage = () => {
+  const { data, isIdle, isError, isLoading, isSuccess, sendTransaction } =
+    useSendTransaction({
+      request: {
+        to: '0xce4a9990251944b625c11d2f4a28b38197aa29e1',
+        value: BigNumber.from('10000000000000000'), // .01 ETH
+      },
+    })
+
   return (
     <Layout>
       <Head>
@@ -12,18 +22,73 @@ const Home: NextPage = () => {
 
       <main className="flex-grow items-center justify-center py-10 px-20 text-center">
         <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-secondary" href="https://nextjs.org">
-            Next.js!
-          </a>
+          <span className="text-secondary">Web3</span> starter template
         </h1>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-base-200 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
+        <p className="mx-48 mt-3 text-left text-xl">
+          <ul className="list-disc ">
+            <li>Only OpenSource libraries used</li>
+            <li>
+              <a
+                className="text-primary hover:underline"
+                href="https://nextjs.org"
+              >
+                NextJS
+              </a>{' '}
+              for fast server-rendered websites
+            </li>
+            <li>
+              <a
+                className="text-primary hover:underline"
+                href="https://hardhat.org/"
+              >
+                Hardhat
+              </a>{' '}
+              for Ethereum based smart contract development
+            </li>
+            <li>
+              <a
+                className="text-primary hover:underline"
+                href="https://tailwindcss.com/"
+              >
+                Tailwind CSS
+              </a>{' '}
+              for simple styling
+            </li>
+            <li>
+              <a
+                className="text-primary hover:underline"
+                href="https://daisyui.com/"
+              >
+                DaisyUI
+              </a>{' '}
+              component library and themeing system
+            </li>
+            <li>
+              Wallet connection with{' '}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.rainbowkit.com/"
+              >
+                RainbowKit
+              </a>{' '}
+              with full DaisyUI themeing
+            </li>
+            <li>
+              <a
+                className="text-primary hover:underline"
+                href="https://wagmi.sh/"
+              >
+                Wagmi
+              </a>{' '}
+              React hooks for Ethereum
+            </li>
+          </ul>
         </p>
+
+        <div className="btn btn-primary m-12" onClick={() => sendTransaction()}>
+          <p>Donate some ETH</p>
+        </div>
       </main>
     </Layout>
   )

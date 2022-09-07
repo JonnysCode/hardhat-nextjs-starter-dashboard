@@ -60,9 +60,8 @@ const navigation: INavigation[] = [
     icon: UsersIcon,
     current: false,
   },
-  { name: 'Projects', href: '/projects', icon: FolderIcon, current: false },
-  { name: 'Calendar', href: '/calendar', icon: CalendarIcon, current: false },
-  { name: 'Documents', href: '/documents', icon: InboxIcon, current: false },
+  { name: '404', href: '/404', icon: FolderIcon, current: false },
+  { name: '500', href: '/500', icon: CalendarIcon, current: false },
 ]
 
 const bottomNavigation: IBottomNavigation[] = [

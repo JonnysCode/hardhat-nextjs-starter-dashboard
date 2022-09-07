@@ -67,7 +67,7 @@ export const SidebarProvider = ({ children }: ISidebarPovider) => {
     }
   }, [scrollY])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window) {
       const { id, position } = storageScrollY()
       document.getElementById(id)?.scrollTo(0, position)

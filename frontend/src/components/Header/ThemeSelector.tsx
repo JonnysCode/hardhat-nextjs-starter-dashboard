@@ -66,7 +66,7 @@ const ThemeSelector = (props: any) => {
         ) : null}
       </Listbox.Button>
 
-      <Listbox.Options className="rounded-box absolute left-1/2 mt-3 w-36 -translate-x-1/2 space-y-1 bg-base-100 p-2 text-sm font-medium shadow-md ring-1 ring-base-300">
+      <Listbox.Options className="rounded-box absolute mt-3 w-36 -translate-x-1/2 space-y-1 bg-base-100 p-2 text-sm font-medium shadow-md ring-1 ring-base-300">
         {themes.map((theme) => (
           <Listbox.Option
             key={theme.value}
