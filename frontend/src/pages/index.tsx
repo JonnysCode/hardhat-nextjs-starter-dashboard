@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex-grow items-center justify-center py-10 px-20 text-center">
-        <h1 className="my-12 text-6xl font-bold">
+        <h1 className="my-10 text-6xl font-bold">
           <span className="text-secondary">Web3</span> starter template
         </h1>
 
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
           </ul>
         </div>
 
-        <div className="m-12 flex-row gap-6">
+        <div className="m-8 flex-row gap-6">
           <a
             className="btn btn-secondary m-3"
             href="https://github.com/JonnysCode/hardhat-nextjs-starter-dashboard"
